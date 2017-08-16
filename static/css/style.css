@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'roboto';
+    font-size: 22px;
+}
+
+#wrapper,
+#wrapper h1 p {
+    width: 100%;
+    margin: 100px auto;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#box {
+    padding: 10px;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+#red1,
+#red2 {
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    color: white;
+    background-color: red;
+    border: 3px solid red;
+}
+
+#green {
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    color: white;
+    background-color: green;
+    border: 3px solid green;
+}
+
+input {
+    margin: 10px auto;
+    width: 150px;
+}

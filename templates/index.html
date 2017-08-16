@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Great Number Game</title>
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for( 'static', filename='css/style.css') }}">
+    <!-- linking a javascript file -->
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+
+<body>
+    <div id=wrapper>
+        <h1> Welcome to the Great Number Games!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+    </div>
+    {% if not session['guess'] %}
+    <div id=box>
+        <form action='/guess' method='post'>
+            <input type='text' name='guess'>
+            <button>Submit</button>
+        </form>
+    </div>
+    {% elif session['guess'] > session['guess_number'] %}
+    <div id=red1>
+        <h1> Too High!</h1>
+        <form action='/guess' method='post'>
+            <input type='text' name='guess'>
+            <button>Submit</button>
+        </form>
+    </div>
+    {% elif session['guess'] < session['guess_number'] %}
+    <div id=red2>
+        <h1> Too Low!</h1>
+        <form action='/guess' method='post'>
+            <input type='text' name='guess'>
+            <button>Submit</button>
+        </form>
+    </div>
+    {% else %}
+    <div id=green>
+        <h1>You got it!</h1>
+        <form action='/play_again' method='post'>
+            <button>Play Again?</button>
+        </form>
+    </div>
+    {% endif %}
+</body>
+
+
+
+</html>
